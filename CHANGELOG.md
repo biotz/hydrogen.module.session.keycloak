@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
+### Added
+- Document that the module needs some env variables to be set in order to work properly
+- Document that the module adds some Integrant keys to the config, and what they are used for.
+
 ## [0.1.0] - 2019-06-10
 
 ### Added

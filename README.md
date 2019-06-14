@@ -1,8 +1,8 @@
 # hydrogen.module for Duct
 
 It implements a module for [Duct](https://github.com/duct-framework/duct).
-`hydrogen.module.session.keycloak` manages communication between Hydrogen app container and
- Keycloak container in order provide session management.
+`hydrogen.module.session.keycloak` manages communication between Hydrogen app and
+a [Keycloak](https://www.keycloak.org/) server in order provide session management.
 
 ## Installation
 
@@ -23,6 +23,19 @@ And a more realistic example:
                    :development ["oksol/client/google_maps_api_v3_36.js"]}}
  :hydrogen.module/session.keycloak {}}
 ```
+
+##### This module will need those env variables to be set in order to work properly:
+1. OIDC_ISSUER_URL
+2. OIDC_AUDIENCE
+3. OIDC_JWKS_URI
+
+The module merges the following keys to system configuration:
+
+1. `:project-ns.api/config`: it provides the above env variables values to the front-end
+2. `:magnet.buddy-auth/jwt-oidc`: it provides a function that implements `:duct.middleware.buddy/authentication` compatible JWT token validation for OpenID Connect ID Tokens.
+3. `:duct.middleware.buddy/authentication`: it provides a Ring-compatible middleware that enables authentication using OpenID Connect ID Tokens.
+
+You will need to reference the `:duct.middleware.buddy/authentication` key from the routes' handlers keys where you want to use authentication. E.g.:
 
 ### Additional options
 
