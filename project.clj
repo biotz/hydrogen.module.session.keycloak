@@ -1,4 +1,4 @@
-(defproject hydrogen/module.session.keycloak "0.1.1-SNAPSHOT"
+(defproject hydrogen/module.session.keycloak "0.1.1"
   :description "Duct module for doing keycloak-based session management in Hydrogen app"
   :url "https://github.com/magnetcoop/hydrogen.module.session.keycloak"
   :license {:name "Mozilla Public Licence 2.0"
