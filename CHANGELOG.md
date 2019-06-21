@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 ### Added
 - tests
+- Now you can configure this module to specify where does the necessary data come from.
+
+### Changed
+- Changed the config key provided. Now `{:keycloak {:clientId ...}` became `{:keycloak {:client-id ...}}`
 
 ## [0.1.1] - 2019-06-19
 ### Added
